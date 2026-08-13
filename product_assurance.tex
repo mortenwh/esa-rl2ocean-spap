@@ -1,0 +1,269 @@
+\section{Software product assurance programme implementation}
+
+\subsection{Organization}
+\label{product-assurance-organization}
+{\color{pink} \it
+a. The SPAP shall describe the organization of software product assurance
+activities, including responsibility, authority and the interrelation of
+personnel who manage, perform and verify work affecting software
+quality.
+
+b. The following topics shall be included:
+
+1. organizational structure;
+
+2. interfaces of each organisation, either external or internal, involved
+in the project;
+
+3. relationship to the system level product assurance and safety;
+
+4. independence of the software product assurance function;
+
+5. delegation of software product assurance tasks to a lower level
+supplier, if any.
+}
+
+{\color{green}
+\textbf{SPA-01} \it
+
+The Supplier shall:
+
+• ensure that an organizational structure is defined for software development, that individuals have defined tasks and responsibilities, that their skills are suitable for the activities to be carried out;
+
+• define and document responsibilities, authority, interfaces of personnel whose work affects software quality;
+
+• provide resources to perform software product assurance tasks;
+
+• identify the personnel responsible for software product assurance;
+
+• grant the software product assurance personnel organisational authority and independence, as well as unimpeded access to higher management as necessary to fulfil their duties.
+}
+
+\textcolor{red}{To be extended, similar to SDP}
+
+The organizational structure of the team is provided in Section 3 of the Project Management Plan (PMP). Software development (work packages 4 and 7) are lead by DLR, with a staffing plan for the software development is provided in Section 4.7 of the Software Development Plan (SDP). Software product assurance is planned, executed, monitored and reported by DLR. The Software product assurance interfaces with the software integration, validation and verification activities (see SIVVP).
+
+\subsection{Responsibilities}
+\label{subsec:responsibilities}
+{\color{pink} \it
+a. The SPAP shall describe the responsibilities of the software product
+assurance function.
+}
+
+\textcolor{red}{To be checked and extended}
+
+\noindent Dominik Günzel:
+\begin{itemize}
+    \item Design and implementation of the CI/CD pipeline for product metrics
+    \item Configuration management (oversees version control and software delivery processes)
+\end{itemize}
+
+\noindent Christoph Schnupfhagn:
+\begin{itemize}
+    \item Definition of the product assurance plan
+    \item Reporting at milestones (SPAMR)
+    \item Monitoring of process and product metrics
+    \item Conduct audits (on demand)
+    \item Handling of Software Problem Reports (SPR) and Non-Conformance Reports (NCR)
+\end{itemize}
+
+\subsection{Resources}
+{\color{pink} \it
+a. The SPAP shall describe the resources to be used to perform the software
+product assurance function.
+b. The description in B.2.1<5.3>a. shall include human resources and skills,
+hardware and software tools.
+}
+
+\paragraph{Human resources and skills:} Key personnel and expertise are detailed in Section 1.3 of the project proposal. The key persons for software product assurance and responsibilities are given in Section~\ref{subsec:responsibilities}.
+
+\paragraph{Hardware:} The Gitlab repository is hosted by DLR. The CI/CD pipeline is executed on a Gitlab runner at DLR. 
+
+\paragraph{Software tools:} Gitlab offers web-based methods to monitor the software product assurance and export pipeline reports.
+
+\subsection{Reporting}
+
+The status of the software product assurance activities is reported regularly at every milestone as a software product assurance milestone report (SPAMR):
+\begin{itemize}
+    \item Phase 1
+    \begin{itemize}
+        \item SPAMR V0.1 at SRR (System Requirement Review)
+        \item SPAMR V1.0 at PDR (Preliminary Design Review)
+        \item SPAMR V1.1 at GPP-V1 AR (Acceptance Review for L2O-GPP V1)
+    \end{itemize}
+    \item Phase 2
+    \begin{itemize}
+        \item SPAMR V2.0 at IPF-V1 AR (Acceptance Review for L2O-IPF V1)
+        \item SPAMR V3.0 at IPF-V2 AR (Acceptance Review for L2O-IPF V2)
+        \item SPAMR V3.1 at QAR (Qualification Acceptance Review)
+        \item SPAMR V3.2 at Final Meeting
+    \end{itemize}
+\end{itemize}
+
+In accordance with the ECSS tailoring [ECSS-T], the reports shall include:
+\begin{itemize}
+    \item an assessment of the current quality of the product and processes, based on measured properties, with reference to the metrication as defined in the software product assurance plan;
+    \item product assurance verifications undertaken;
+    \item problems detected;
+    \item problems resolved.
+\end{itemize}
+
+\subsection{Quality models}
+{\color{pink} \it
+a. The SPAP shall describe the quality models applicable to the project and
+how they are used to specify the quality requirements.
+
+5.2.7.2 The following characteristics shall be used to specify the quality model:
+1. functionality
+2. reliability;
+3. maintainability;
+4. reusability;
+5. suitability for safety;
+6. security;
+7. usability;
+8. efficiency;
+9. portability;
+10. software development effectiveness.
+NOTE 1 Quality models are the basis for the identification
+of process metrics (see clause 6.2.5) and product
+metrics (see clause 7.1.4).
+NOTE 2 quality models are also addressed by ISO/IEC 9126
+or ECSS-Q-HB-80-04
+}
+
+Following the requirements from the ECSS tailoring, this section introduces a quality model for the L2O software. Quality models are the basis for the identification of quantitative process metrics (see Section~\ref{sub:process-metrics}), which measure the process of the software development, and product metrics (see Section~\ref{sec:product-quality}), which measure the quality of the software product.
+
+The quality model is tailored from the reference quality model defined in ECSS-Q-HB-80-04 and the baseline metrication and quality requirements defined in the Software Requirement Specification (SRS) using the following characteristics, sub-characteristics, and derived metrics:
+
+\begin{itemize}
+    \item Functionality
+    \begin{itemize}
+        \item Completeness
+        \begin{itemize}
+            \item Unit test coverage
+        \end{itemize}
+        \item Correctness
+        \begin{itemize}
+            \item Adherence to coding standards
+        \end{itemize}
+    \end{itemize}
+    \item Reliability
+    \begin{itemize}
+        \item Reliability evidence
+        \begin{itemize}
+            \item SPR/NCR status: snapshot of the SPR/NCR status at a given point in time
+        \end{itemize}
+    \end{itemize}
+    \item Maintainability
+    \begin{itemize}
+        \item Complexity
+        \begin{itemize}
+            \item Number of lines of code and comments
+            \item Number of duplicated lines of code
+            \item Number of lines of code per file
+            \item Number of lines of code per method/function
+            \item Cyclomatic Complexity
+            \item Maintainability Index
+            \item Halstead metrics
+        \end{itemize}
+    \end{itemize}
+    \item Usability
+    \begin{itemize}
+        \item User documentation quality
+        \begin{itemize}
+            \item Docstring coverage
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+
+\subsection{Risk management}
+{\color{pink} \it
+a. The SPAP shall describe the contribution of the software product
+assurance function to the project risk management.
+}
+
+Risks and mitigation strategies are outlined in the project management report. The lists directly associated with the software product quality are repeated here:
+\begin{itemize}
+    \item Possible delays of the SPAP and SPAMR deliverables are consideres as a low risk for the project. The software product assurance activities have already started (see SPAMR V0.1), and are continuously running as CI/CD pipelines.
+    \item A lack of data and inputs from parallel activities can delay the software development, while the software product assurance is conducted continuously.
+\end{itemize}
+
+\subsection{Supplier selection and control}
+There are no next level suppliers.
+
+\subsection{Methods and tools}
+\label{subsec:methods-and-tools}
+{\color{pink} \it
+a. The SPAP shall describe the methods and tools used for all the activities
+of the development cycle, and their level of maturity.
+
+5.6.1.1
+a. Methods and tools to be used for all the activities of the development
+cycle, (including requirements analysis, software specification,
+modelling, design, coding, validation, testing, configuration
+management, verification and product assurance) shall be identified by
+the supplier and agreed by the customer
+
+5.6.1.2
+a. The choice of development methods and tools shall be justified by
+demonstrating through testing or documented assessment that:
+1. the development team has appropriate experience or training to
+apply them,
+2. the tools and methods are appropriate for the functional and
+operational characteristics of the product, and
+3. the tools are available (in an appropriate hardware environment)
+throughout the development and maintenance lifetime of the
+product
+}
+
+{\color{green}
+\textbf{SPA-06} \it
+
+Methods and tools to be used for all the activities of the software development cycle (including requirements analysis, software specification, modelling, design, coding, validation, testing, configuration management, verification and product assurance) shall be identified by the supplier and agreed by the customer.
+The correct use of methods and tools shall be verified and reported.
+}
+
+(updated from SPAMR V0.1)
+
+\paragraph{Requirements analysis.} The software requirements are formulated in the SRS based on [SoW], [GEN], [MRD], and initially delivered at SRR. The requirements are formulated in an Excel table, which is automatically exported and included into the SRS document. The requirements are analyzed and updated as needed and in response to RIDs. Updated versions of the SRS, including requirements and associated verification methods, are delivered at PDR, GPP-CDR, and IPF-CDR. TBCs/TBDs have unique identifiers, target milestones and are tracked on Gitlab.
+    
+\paragraph{Software specification.} In the initial phase of the project, a prototype of the GPP processor was implemented on Gitlab, based on the [SoW] and the project proposal [PP], using the EOPF-CPM library and Sentinel-1 example products. On a high level, the internal logic and structure of the processor is given in the production model, which defines the inputs, outputs, and interrelations of the value-adding modules for wind, waves, and currents, as well as preprocessing and postprocessing. The use of `xarray` data structures aids the parallelisation of the processor. An internal `xarray.DataTree` is outlined within the team, which supports the definition of internal interfaces and serves as a common data structure. The algorithms for wind, waves and currents are developed by the respective experts, while the development of common algorithms (e.g. preprocessing) is distributed within the team.
+
+\paragraph{Modelling.} UML diagrams and C4 diagrams are used for software modelling. \textcolor{red}{update based on SDD}
+    
+\paragraph{Software design.} Details on the software design are given in the SDD document. The software design is visualized as UML-based class diagrams. \textcolor{red}{update based on SDD}
+
+\paragraph{Coding.} Individual repositories for GPP, IPF, COREALG, IO, VAM are provided on Gitlab. Python coding and debugging is mainly conducted on local machines. Automated code checks are implemented as Git pre-commit hooks and as part of automated CI/CD pipelines to ensure proper code formatting and type annotations. Instructions for setting up a development environment are provided in the software documentation (e.g. L2O-GPP: \url{https://rl2ocean.pages.gitlab.dlr.de/l2o-gpp/main/contributing.html}) to aid contributors in making use of these tools and run local unit tests, encouraging test-driven development.
+
+\paragraph{Validation.} Validation methods for the processor are outlined in the SIVVP and Calibration and Validation Approach Technical Note (CVA-TN). \textcolor{red}{update based on SIVVP}
+
+\paragraph{Testing.} Developers should adopt a test-driven development approach. Tests can be run locally, and automated CI/CD pipelines are set up and executed by a Gitlab runner installed on DLR premises.
+
+\paragraph{Configuration management.} Gitlab repositories hosted by DLR is used to manage the source code and configurations. The repositories contain the complete set of configuration files for all used development tools, requiring no manual setup by contributors. The same configuration files are used regardless of whether tools are used locally or in CI/CD pipelines. The processor adopts the common semantic versioning scheme. The main branch of the Gitlab repository is protected, meaning developers are not allowed to push commits directly into it. Instead, they are expected to work on new features in dedicated branches and request via merge requests for their changes to be adopted in the main branch. Merge requests must pass the checks and tests inside the CI/CD pipeline prior to approval. Only maintainers (and higher roles) have permission to approve merge requests.
+
+\paragraph{Verification.} A CI/CD pipeline for the GPP was implemented to automatically run unit and integration tests. Test results are embedded in the automatically generated documentation that is hosted online using the Gitlab Pages functionality. The results of other tools that are part of the pipeline, e.g., code linting and formatting, are collected and summarized using the Gitlab Code Quality feature. \textcolor{red}{The goal is that all tools support the required output format to allow using Gitlab as a dashboard.}
+    
+\paragraph{Issues.} Software issues shall be added in the respective Gitlab software repositories. They can also be managed from group-wide issue boards to enable effective coordination.
+
+\paragraph{Product assurance.} ECSS-Q-ST-80C with CopEX ECSS tailoring is applied. The CI/CD results are saved to continuously collect metrics (e.g., code complexity, test coverage) to be able to monitor the software quality in an objective way.
+    
+\paragraph{Document management.} Document deliverables are prepared as collaborative Latex documents via Github and Overleaf. Project documents are stored on the ESA sharepoint.
+    
+
+\subsection{Process assessment and improvement}
+{\color{pink} \it
+a. The SPAP shall state the scope and objectives of process assessment.
+b. The SPAP shall describe the methods and tools to be used for process
+assessment and improvement.
+}
+
+Process assessment and ideas for improvement can be discussed as needed in the regular progress meetings.
+
+\subsection{Operations and maintenance (optional)}
+
+{\color{pink} \it
+a. The SPAP shall specify the quality measures related to the operations and
+maintenance processes (alternatively, a separate SPAP is produced).
+}
+
+The project documentation, in particular the software user manuals and API references, and the maintainability metrics defined in this document aid the operations and maintenance of the software. Reporting on SPR/NCR is provided in the SPAMR at each milestone.

@@ -1,0 +1,177 @@
+\section{Software product quality assurance}
+\label{sec:product-quality}
+
+{\color{pink} \it
+a. The SPAP shall describe the approach taken to ensure the quality of the
+software product.
+
+b. The description of the approach specified in B.2.1<7>a shall include the:
+
+1. specification of the product metrics, their target values and the
+means to collect them;
+
+2. definition of a timely metrication programme;
+
+3. analyses to be performed on the collected metrics;
+
+4. way the results are fed back to the development team;
+
+5. documentation quality requirements;
+
+6. assurance activities meant to ensure that the product meets the
+quality requirements.
+}
+
+\subsection{Product metrics}
+\label{subsec:product-metrics}
+
+{\color{green}
+
+\textbf{SPA-18} \it
+
+A quality model shall be defined, based on the following quality characteristics:
+• functionality;
+• reliability;
+• maintainability;
+• usability.
+
+The quality model shall be used to specify software quality requirements in quantitative terms or constraints. A metrication programme shall be defined, based on the quality model, specifying:
+
+• the metrics to be collected and stored;
+
+• the means to collect metrics (measurements);
+
+• the target values, with reference to the product quality requirements;
+
+• how the results of the analyses performed on the collected metrics are fed back to the development team and used to identify corrective actions;
+
+• the schedule of metrics collection, storing, analysis and reporting, with reference to the whole software life cycle.
+Numerical accuracy shall be estimated and verified.
+
+The results of metrics collection and analysis shall be included in the software product assurance reports.
+}
+
+Following the SRS, the following product metrics are introduced and automatically checked in the CI/CD pipeline. The metrics are permanently stored as pipeline reports on Gitlab. The results of metrics collection and analysis is included in SPAMR reports, for each of the software items L2O-GPP, L2O-IPF, L2O-IO, L2O-COREALG separately.
+
+%%%
+
+\subsubsection{Unit test coverage}
+
+The unit test coverage measures the fraction of the program code which is executed during unit tests. It is measured using \texttt{pytest}. \textcolor{red}{Per function, total average value}
+
+\paragraph{Target:} 100\,\%, as given by L2O-RAM-0860
+
+%%%
+
+\subsubsection{Adherence to coding standards}
+
+Adherence to coding standards is checked by a combination of linting, automated formatting and static type checking (\texttt{ruff, isort, mypy}).
+
+\paragraph{Target:} PASSED, as given by L2O-RAM-0900
+
+%%%
+
+\subsubsection{Number of lines of code and comments}
+
+Compute the total number of lines of code and comments using \texttt{radon} as: LOC = (total number of lines of code) – (comment and blank lines) \textcolor{red}{???}
+
+\paragraph{Target:} No target value provided (see L2O-RAM-0960), but for monitoring the progress and to evaluate the maintainability index.
+
+%%%
+
+\subsubsection{Number of duplicated lines of code}
+
+Compute the total number of duplicated lines of code using \texttt{radon}. \textcolor{red}{???}
+
+\paragraph{Target:} No target value provided (see L2O-RAM-0960), but for monitoring the maintainability
+
+%%%
+
+\subsubsection{Lines of code per file}
+
+Compute the total number of lines of code per file using \texttt{radon} as: LOC = (number of lines of code per file) – (comment and blank lines) \textcolor{red}{???}
+
+\paragraph{Target:} $\leq 1000$ as given by L2O-RAM-0990
+
+%%%
+
+\subsubsection{Lines of code per method/function}
+
+Compute the total number of lines of code per method/function using \texttt{radon} as: LOC = (number of lines of code per method/function) – (comment and blank lines) \textcolor{red}{???}
+
+\paragraph{Target:} $\leq 100$ as given by L2O-RAM-1000
+
+%%%
+
+\subsubsection{Cyclomatic Complexity}
+
+This metrics is an indicator for the code complexity. It is evaluated by static code analysis using\texttt{radon} and measures the number of linearly independent paths through the code (see \url{https://radon.readthedocs.io/en/latest/intro.html}). \textcolor{red}{per file and average???}
+
+\paragraph{Target:} $\leq 10$ as given by L2O-RAM-0970
+
+%%%
+
+\subsubsection{Halstead metrics}
+
+\textcolor{red}{THis section can be reduced to Halstead volume or fully removed, see \url{https://gitlab.dlr.de/rl2ocean/management/-/work_items/452}}
+
+By measuring four parameters by static code analysis using \texttt{radon} (see \url{https://radon.readthedocs.io/en/latest/intro.html}),
+\begin{itemize}
+    \item $\eta_1$: number of distinct operators,
+    \item $\eta_2$: number of distinct operands,
+    \item $N_1$: total number of operators,
+    \item $N_2$: total number of operands,
+\end{itemize}
+the following seven measures are derived and called Halstead metrics:
+\begin{itemize}
+    \item Program vocabulary: $\eta = \eta_1 + \eta_2$
+    \item Program length: $N = N_1 + N_2$
+    \item Calculated program length: $\hat{N} = \eta_1 \log_2 \eta_1 + \eta_2 \log_2 \eta_2$
+    \item Volume: $V = N \log_2 \eta$
+    \item Difficulty: $D = \frac{\eta_1}{2} \cdot \frac{N_2}{\eta_2}$
+    \item Effort: $E = D \cdot V$
+    \item Time required to program: $T = \frac{E}{18}$ seconds
+    \item Number of delivered bugs: $B = \frac{V}{3000}$
+
+
+\end{itemize}
+
+\paragraph{Target:} no target values (see (L2O-RAM-0960), but the Halstead volume is used to derive the maintainability index
+
+%%%
+
+\subsubsection{Maintainability index}
+
+This metrics measures the maintainability of the source code. The maintainability index is derived from Halstead volume, cyclomatic complexity, number of Source Lines of Code (SLOC) and the percentage of comment lines by static code analysis using\texttt{radon} (see \url{https://radon.readthedocs.io/en/latest/intro.html}).
+
+\paragraph{Target:} $> 50$ as given by L2O-RAM-0980
+
+%%%
+
+\subsubsection{Docstring coverage}
+
+This metrics measures the docstring coverage by static code analysis using \texttt{docstr-coverage}. It is evaluated for individual files and for the entire software project.
+
+\paragraph{Target:} 100\,\% (no requirement)
+
+
+\subsection{Timely metrication programme}
+The product metrics are automatically computed and evaluated in the CI/CD pipeline. Merge requests must pass the checks and tests inside the CI/CD pipeline prior to approval. Only maintainers (and higher roles) have permission to approve merge requests.
+
+\subsection{Product metrics analysis}
+The product metrics are saved on Gitlab as CI/CD reports for each commit to the main branch. The status of the metrics are presented in the regular SPAMR reports at each milestone, and in progress meetings if considered relevant by the product assurance team. The regular analysis ensures that the product meets the quality requirements.
+
+\subsection{Feedback to the development team}
+The main branch of the Gitlab repository is protected, meaning developers are not allowed to push commits directly into it. Instead, they are expected to work on new features in dedicated branches and request via merge requests for their changes to be adopted in the main branch. As indicated, merge requests must pass the checks and tests inside the CI/CD pipeline prior to approval. This ensures that the immediate product quality is not degraded by individual commits. Degradation of the product quality which happen on a longer time scale (e.g., docstring coverage), is analyzed by the SPAMR reports.
+
+As most of the metrics are also evaluated per method/function, shortcomings in individual parts of the software can be traced back to the respective software developer. The software developers are approached by the software product assurance team if necessary. \textcolor{red}{Dominik: add messages in pipeline report if individual files are bad}
+
+\subsection{Documentation quality requirements}
+
+The history of product metrics, evaluated in the CI/CD pipelines at each commit or merge request to the main branches, is stored on Gitlab. Documentation of the product metrics is provided in Section~\ref{subsec:product-metrics}. Reporting in the SPAMR shall contain all information required by the ECSS [ECSS-Q] and tailoring [ECSS-T].
+
+\textcolor{red}{TBD}
+
+\subsection{Assurance activities meant to ensure that the product meets the quality requirements}
+
+As outlined in the previous sections, the product metrics are evaluated and reported regularly, and provided as direct feedback to the development team in order to ensure that the product meets the quality requirements.

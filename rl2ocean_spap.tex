@@ -47,16 +47,16 @@
 \definecolor{green1}{RGB}{221,242,151}
 \definecolor{ao}{rgb}{0.0, 0.5, 0.0}
 
+%KEEP THIS ONE LAST it's quite buggy, it allows you to click on links within the pdf and web links without changing the colour. The mouse cursor simply changes its icon to indicate to the user. Great tool - still awkward
+\usepackage[hidelinks]{hyperref}
+\usepackage[absolute,overlay]{textpos}
+%\usepackage{subfig}
+
 \usepackage[
     type={CC},
     modifier={by},
     version={4.0},
 ]{doclicense}
-
-%KEEP THIS ONE LAST it's quite buggy, it allows you to click on links within the pdf and web links without changing the colour. The mouse cursor simply changes its icon to indicate to the user. Great tool - still awkward
-\usepackage[hidelinks]{hyperref}
-\usepackage[absolute,overlay]{textpos}
-%\usepackage{subfig}
 
 
 
@@ -68,6 +68,12 @@
 \fancyhead[LE,RO]{\doclicenseImage[imagewidth=2cm]}
 \renewcommand{\headrulewidth}{0.2pt}
 
+%This allows importing and formatting CSV files as multi-page tables
+\usepackage{csvsimple-l3}
+\usepackage{xltabular}
+
+\usepackage{soul}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%% DOCUMENT STARTS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -77,7 +83,6 @@
 \begin{document}
 
 \include{./rl2ocean_frontpage}
-\include{./abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% INDEX %%%%%%%%%%%%%%%%%%%%%%
 
@@ -90,12 +95,25 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% MAIN CONTENT %%%%%%%%%%%%%%%%%%%%%%
 
-\section{Introduction}
-\section{Chapter 2}
+\include{./introduction}
+
+\include{./reference_documents}
+
+\include{./abbreviations}
+
+\include{./system_overview}
+
+\include{./product_assurance}
+
+\include{./process_assurance}
+
+\include{./product_quality_assurance}
+
+\include{./compliance_matrix}
 
 
-\bibliographystyle{ieeetr}
-\bibliography{bibliography}
+%\bibliographystyle{ieeetr}
+%\bibliography{bibliography}
 
 
 \end{document}
