@@ -1,86 +1,91 @@
 \section{Software process assurance}
 
 \subsection{Software development cycle}
-{\color{pink} \it
-a. The SPAP shall refer to the software development cycle description in the
-software development plan.
 
-b. If not covered in the software development plan, the life cycle shall be
-described.
+%{\color{pink} \it
+%a. The SPAP shall refer to the software development cycle description in the
+%software development plan.
+%
+%b. If not covered in the software development plan, the life cycle shall be
+%described.
+%
+%c. The life cycle shall include a milestone immediately before the starting of
+%the software validation.
+%}
 
-c. The life cycle shall include a milestone immediately before the starting of
-the software validation.
-}
-
-The software development cycle is described in Section~5.2 of the Software Development Plan (SDP). \textcolor{red}{Compare with SDP!}
+The software development cycle is described in Section~5.2 of the Software Development Plan (SDP).
 
 \subsection{Projects plans}
-{\color{pink} \it
-a. The SPAP shall describe all plans to be produced and used in the project.
-b. The relationship between the project plans and a timely planning for
-their preparation and update shall be described.
-}
+\label{subsec:project-plans}
 
-{\color{green}
-\textbf{SPA-07} \it
+%{\color{pink} \it
+%a. The SPAP shall describe all plans to be produced and used in the project.
+%b. The relationship between the project plans and a timely planning for
+%their preparation and update shall be described.
+%}
 
-The following activities shall be covered by project planning documentation:
-• development;
-• specification, design and customer documents to be produced;
-• configuration and documentation management;
-• verification, testing and validation activities;
-• maintenance.
+%{\color{green}
+%\textbf{SPA-07} \it
+%
+%The following activities shall be covered by project planning documentation:
+%• development;
+%• specification, design and customer documents to be produced;
+%• configuration and documentation management;
+%• verification, testing and validation activities;
+%• maintenance.
+%}
 
-Project plans, procedures and standards shall be finalized before the start of the related activities.
-}
+Project plans, procedures and standards shall be finalized before the start of the related activities. The following plans are being developed and delivered:
 
-\paragraph{PMP} The Project Management Plan (KO, PDR and updates as needed) defines key personnel, team and work organisation, deliverables, and risks.
+\paragraph*{PMP} The Project Management Plan (KO, PDR and updates as needed) defines key personnel, team and work organisation, deliverables (including an overview of specification, design and customer documents to be produced), and risks.
     
-\paragraph{GANTT} The GANTT table describes the project time plan including milestones and reviews.
+\paragraph*{GANTT} The GANTT table describes the project time plan including milestones and reviews.
     
-\paragraph{SDP} The Software Development Plan (KO, PDR and updates as needed) describes the management and development approach for the software items.
+\paragraph*{SDP} The Software Development Plan (KO, PDR and updates as needed) describes the management and development approach for the software items.
     
-\paragraph{SPAP} This Software Product Assurance Plan (PDR and updates as needed) describes the organization and technical approach to the execution of the software product assurance programme, including documentation and configuration management (Section~\ref{subsec:doc-conf-management}) and \textcolor{red}{maintenance} (Section~\ref{subsec:maintenance}).
+\paragraph*{SPAP} This Software Product Assurance Plan (PDR and updates as needed) describes the organization and technical approach to the execution of the software product assurance programme, including documentation and configuration management (Section~\ref{subsec:doc-conf-management}) and maintenance (Section~\ref{subsec:maintenance}).
     
-\paragraph{SIVVP} The Software Integration, Verification and Validation Plan (PDR, GPP-CDR, IPD-CDR) describes the organization aspects and management approach to implement the software verification, testing, validation and integration activities, tasks and processes.
+\paragraph*{SIVVP} The Software Integration, Verification and Validation Plan (PDR, GPP-CDR, IPF-CDR) describes the organization aspects and management approach to implement the software verification, testing, validation and integration activities, tasks and processes.
     
-\paragraph{ISMP} The Information Security Management Plan (PDR and updates as needed) describes the need-to-know policy.
+\paragraph*{ISMP} The Information Security Management Plan (PDR and updates as needed) describes the need-to-know policy.
     
-\paragraph{CVP and CVP-IOC} The Cal/Val Plans (End of T8.1, 8.2) describe activities to be carried out during the IOC and Phase E2 to validate the system and L2O products.
+\paragraph*{CVP and CVP-IOC} The Cal/Val Plans (End of T8.1, 8.2) describe activities to be carried out during the IOC and Phase E2 to validate the system and L2O products.
     
-\paragraph{DQMP} The data quality monitoring plan (End of T8.2) contains the activities to be carried on during Phase E2 to monitor the L2 Ocean products quality both in terms of performance, format and completeness.
+\paragraph*{DQMP} The data quality monitoring plan (End of T8.2) contains the activities to be carried on during Phase E2 to monitor the L2 Ocean products quality both in terms of performance, format and completeness.
 
 
 
 
 \subsection{Software dependability and safety}
-{\color{pink} \it
-a. The SPAP shall contain a description and justification of the measures to
-be applied for the handling of critical software, including the analyses to
-be performed and the standards applicable for critical software.
-}
+\label{subsec:software-dependability-safety}
 
-{\color{green}
-\textbf{SPA-08} \it
+%{\color{pink} \it
+%a. The SPAP shall contain a description and justification of the measures to
+%be applied for the handling of critical software, including the analyses to
+%be performed and the standards applicable for critical software.
+%}
 
-The software shall be specified and designed to prevent failure propagation.
-Error handling shall be implemented to ensure that, in case of fault, the software shall support graceful degradation.
-}
+%{\color{green}
+%\textbf{SPA-08} \it
+%
+%The software shall be specified and designed to prevent failure propagation.
+%Error handling shall be implemented to ensure that, in case of fault, the software shall support graceful degradation.
+%}
 
-\begin{itemize}
-    \item The main classes of boundary and not nominal conditions, corner cases, processing of degraded data, and processing in case of missing or partial inputs are listed in the SRS and described in the Production Model.
-    \item The production model also specifies the independence of the wind, wave, and currents retrieval, such that the processing can continue if any of the retrieval modules fail (graceful degradation).
-    \item Error handling, graceful degradation and logging are specified in the SRS.
-\end{itemize}
+The main classes of boundary and not nominal conditions, corner cases, processing of degraded data, and processing in case of missing or partial inputs are listed in the SRS and described in the Production Model.
+
+The production model also specifies the independence of the wind, wave, and currents retrieval, such that the processing can continue if any of the retrieval modules fail (graceful degradation).
+
+Error handling, graceful degradation and logging are specified in the SRS and covered in Section~5.2 of the SDD.
 
 \subsection{Software documentation and configuration management}
 \label{subsec:doc-conf-management}
 
-{\color{pink} \it
-a. The SPAP shall describe the contribution of the software product
-assurance function to the proper implementation of documentation and
-configuration management.
-}
+%{\color{pink} \it
+%a. The SPAP shall describe the contribution of the software product
+%assurance function to the proper implementation of documentation and
+%configuration management.
+%}
 
 \subsubsection{Software documentation}
 The following documentation is produced within the project:
@@ -92,174 +97,172 @@ The following documentation is produced within the project:
     \item The IODD describes the software inputs and outputs.
     \item The PDD defines the products.
     \item The PFS / AUX-PFS specifies the product and auxiliary product formats.
-    \item Software User Manuals for L2O-GPP, L2O-IPF, L2O-IO, L2O-COREALG, L2O-QC are provided in reStructuredText in the Gitlab repositories (including version control) and are included on Gitlab Pages.
+    \item Software User Manuals for L2O-GPP, L2O-IPF, L2O-IO, L2O-COREALG, L2O-QC are provided in reStructuredText format in the Gitlab repositories (including version control) and are available in the Gitlab Pages. They will also contain Jupyter notebooks to demonstrate the use of the software for external collaborators and the science community.
     \item API References for L2O-GPP, L2O-IPF, L2O-IO, L2O-COREALG, L2O-QC are automatically generated with \texttt{sphinx} from Python docstrings in the Gitlab repositories (main branch; including version control) and provided on Gitlab Pages.
-    \item Software Reuse Files (SRF) for L2O-GPP, L2O-IPF, L2O-IO, L2O-COREALG, L2O-QC are provided in reStructuredText in the Gitlab repositories (including version control) and are included on Gitlab Pages.
-    \item Jupyter notebooks demonstrate the use of the software for external collaborators and the science community (TBD).
+    \item Software Reuse Files (SRF) for L2O-GPP, L2O-IPF, L2O-IO, L2O-COREALG, L2O-QC are provided in reStructuredText in the Gitlab repositories (including version control) and are provided on Gitlab Pages.
 \end{itemize}
 
+The PMP Section~5 contains the list of deliverable documents with links to the current version in progress (overleaf) and delivered versions (ESA sharepoint).
+
 \subsubsection{Configuration management}
+\label{subsec:configuration-management}
 
-{\color{green}
-
-\textbf{SPA-09} \it
-
-Besides the configuration requirements applicable to the project, the following specific requirements apply to software configuration management:
-
-• the software configuration management system shall allow any reference version to be re-generated from backups;
-
-• the supplier shall ensure that all authorized changes are implemented in accordance with the software configuration management planning and procedures;
-
-• software configuration management planning and procedures shall address software branching and merging.
-}
-
-(Adapted from SPAMR V0.1:)
+%{\color{green}
+%
+%\textbf{SPA-09} \it
+%
+%Besides the configuration requirements applicable to the project, the following specific requirements apply to software configuration management:
+%
+%• the software configuration management system shall allow any reference version to be re-generated from backups;
+%
+%• the supplier shall ensure that all authorized changes are implemented in accordance with the software configuration management planning and procedures;
+%
+%• software configuration management planning and procedures shall address software branching and merging.
+%}
 
 Gitlab repositories hosted by DLR are used to manage the source code and configurations. This allows to regenerate any reference version from history. The repositories contain the complete set of configuration files for all used development tools, requiring no manual setup by contributors. The same configuration files are used regardless of whether tools are used locally or in CI/CD pipelines. The processor adopts the common semantic versioning scheme. The main branch of each Gitlab repository is protected, meaning developers are not allowed to push commits directly into it. Instead, they are expected to work on new features in dedicated branches and request via merge requests for their changes to be adopted in the main branch. Merge requests must pass the checks and tests inside the CI/CD pipeline prior to approval. Only maintainers (and higher roles) have permission to approve merge requests. Furthermore, maintainers are currently allowed to push directly to the main branch, but this is discouraged.
 
-A Configuration Item Data List (CIDL) is delivered at PDR, CDR and updated as needed, listing all the configuration data items including the status and
-version number.
+Software configuration files are delivered at each software delivery. A Configuration Item Data List (CIDL) is delivered at PDR, CDR and updated as needed, listing all the configuration data items including the status and version number.
 
 \subsubsection{Nonconformance control system}
 
-{\color{pink} \it
-b. The nonconformance control system shall be described or referenced. The
-point in the software life cycle from which the nonconformance
-procedures apply shall be specified.
-}
+%{\color{pink} \it
+%b. The nonconformance control system shall be described or referenced. The
+%point in the software life cycle from which the nonconformance
+%procedures apply shall be specified.
+%}
 
 According to the [SoW], ESA can raise anomaly reports (AR)/SPR/NCR in Phase 2 in case anomalies or more generally non-compliant behaviour
 should be observed (see RSL-L2O-0334). After fixing the anomaly, a new SW version will be delivered (see RSL-L2O-0336).
 
 \subsubsection{Software delivery}
 
-{\color{pink} \it
-c. The SPAP shall identify method and tool to protect the supplied
-software, a checksum-type key calculation for the delivered operational
-software, and a labelling method for the delivered media.
-}
+%{\color{pink} \it
+%c. The SPAP shall identify method and tool to protect the supplied
+%software, a checksum-type key calculation for the delivered operational
+%software, and a labelling method for the delivered media.
+%}
 
-The software requirements in the SRS have a dedicated category for the software delivery. In particular, all software deliveries include an MD5 checksum as integrity check mechanism. All software deliveries shall be named in unique way and include in the name information about the version according to the semantic versioning scheme. Software is delivered electronically. Procedures for the software delivery are documented in Section~\ref{subsub:software-delivery-and-acceptance}.
+The software requirements in the SRS have a dedicated category for the software delivery. In particular, all software deliveries include a SHA-256 checksum as integrity check mechanism. All software deliveries shall be named in unique way and include in the name information about the version according to the semantic versioning scheme. Software is delivered electronically. Procedures for the software delivery are documented in Section~\ref{subsub:software-delivery-and-acceptance}.
 
 \subsection{Process metrics}
-\label{sub:process-metrics}
+\label{subsec:process-metrics}
 
-{\color{pink} \it
-a. The SPAP shall describe the process metrics derived from the defined
-quality models, the means to collect, store and analyze them, and the way
-they are used to manage the development processes.
+%{\color{pink} \it
+%a. The SPAP shall describe the process metrics derived from the defined
+%quality models, the means to collect, store and analyze them, and the way
+%they are used to manage the development processes.
+%}
 
-(Mandatory according to ECSS-HB: Milestone tracking, Effort tracking, Code size stability, RID/action status, V\&V progress)
-}
+%{\color{green}
+%\textbf{SPA-10} \it
+%
+%The following basic process metrics shall be used:
+%• duration: how phases and tasks are being completed
+%versus the planned schedule;
+%• effort: how much effort is consumed by the various
+%phases and tasks compared to the plan.
+%
+%The following basic process metric shall be used and
+%reported to the customer:
+%• Number of problems detected during validation
+%testing
+%}
 
-{\color{green}
-\textbf{SPA-10} \it
-
-The following basic process metrics shall be used:
-• duration: how phases and tasks are being completed
-versus the planned schedule;
-• effort: how much effort is consumed by the various
-phases and tasks compared to the plan.
-
-The following basic process metric shall be used and
-reported to the customer:
-• Number of problems detected during validation
-testing
-}
-
-The following process metrics are internal, i.e., they are collected and monitored by the project manager, but not reported to ESA:
+The following process metrics are used:
 \begin{itemize}
-    \item Duration: how phases and tasks are being completed versus the planned schedule. \textcolor{red}{Morten?}
-    \item Effort: how much effort is consumed by the various phases and tasks compared to the plan. \textcolor{red}{Morten?}
+    \item Duration: how phases and tasks are being completed versus the planned schedule.
+    \item Effort: how much effort is consumed by the various phases and tasks compared to the plan.
 \end{itemize}
+Deviations from planned duration and effort shall be reported in the progress reports \textcolor{red}{(TBD)}.
 
 The following process metrics are reported in the SPAMR:
 \begin{itemize}
-    \item Number of problems detected during validation testing (\textcolor{red}{from Gitlab issues})
-    \item SPR/NCR status
+    \item Number of problems detected during validation testing
+    \item Number of problems resolved
 \end{itemize}
 
 \subsection{Reuse of software}
-{\color{pink} \it
-a. The SPAP shall describe the approach for the reuse of existing software,
-including delta qualification.
-}
+\label{subsec:reused-software}
 
-{\color{green}
-\textbf{SPA-12} \it
+%{\color{pink} \it
+%a. The SPAP shall describe the approach for the reuse of existing software,
+%including delta qualification.
+%}
 
-The existing software re-used within the project shall be identified and agreed with ESA.
-}
+%{\color{green}
+%\textbf{SPA-12} \it
+%
+%The existing software re-used within the project shall be identified and agreed with ESA.
+%}
 
-Existing own software to be used within the project (see Project Proposal Section 2.11):
+Existing own software and third party software planned to be used within the project was stated in the Project Proposal [PP] Sections~2.11 and 2.12.
 
-\begin{itemize}
-    \item Sea State processor from SAINT (DLR): Existing software features (C++) are translated into Python, unless Python limits the performance of individual modules too much.
-    \item ROSE-L L1 GPP and C-REEPS (DLR): To be used as-is for the generation of emulated and simulated L-band data. \textcolor{red}{relevant here?}
-    \item Wavy (MET): Python package to aid the collocation of observations and wave model output as well as subsequent wave model validation and calibration (\url{https://github.com/bohlinger/wavy}).
-    \item Triple colloation and spatial variances analysis tool (CSIC)
-\end{itemize}
-
-Existing third-party software to be used within the project (see Project Proposal Section 2.12):
-
-\begin{itemize}
-    \item Satpy is a python library based on numpy, xarray and dask for reading, manipulating and exporting meteorological remote sensing data to various image and data file formats (\url{(https://github.com/pytroll/satpy}).
-    \item The Earth Observation Processing Framework – Core Python Modules (EOPF-CPM) is a Python library for Input/Output of satellite data products (\url{https://gitlab.eopf.copernicus.eu/cpm/eopf-cpm}). As this libary is under development, the project team opens Gitlab tickets if errors are encountered.
-\end{itemize}
-
-A complete list and justification of reused software is provided by the Software Reuse Files (SRF) in the L2O-GPP, L2O-IPF, L2O-IO, L2O-COREALG, and L2O-QC repositories and the respective Gitlab Pages.
-
+The selection and justification of reused software is provided by the Software Reuse Files (SRF) in the L2O-GPP, L2O-IO, L2O-COREALG, L2O-VAM and L2O-QC repositories and the respective Gitlab Pages. The SRFs will be reviewed and updated at each software delivery. The SRF for L2O-IPF will be added in Phase 2 of the project.
 
 
 \subsection{Product assurance planning for individual processes and activities}
-{\color{pink} \it
-a. The following processes and activities shall be covered, taking into
-account the project scope and life cycle:
 
-1. software requirements analysis;
-
-2. software architectural design and design of software items;
-
-3. coding;
-
-4. testing and validation (including regression testing);
-
-5. verification;
-
-6. software delivery and acceptance;
-
-7. operations and maintenance.
-}
+%{\color{pink} \it
+%a. The following processes and activities shall be covered, taking into
+%account the project scope and life cycle:
+%
+%1. software requirements analysis;
+%
+%2. software architectural design and design of software items;
+%
+%3. coding;
+%
+%4. testing and validation (including regression testing);
+%
+%5. verification;
+%
+%6. software delivery and acceptance;
+%
+%7. operations and maintenance.
+%}
 
 \subsubsection{Software requirements analysis}
+\label{subsec:software-requirements-analysis}
 
-{\color{green}
-\textbf{SPA-13} \it
+%{\color{green}
+%\textbf{SPA-13} \it
+%
+%Besides functional requirements, the following classes of non-functional requirements shall be specified:
+%• performance,
+%• reliability,
+%• robustness,
+%• quality,
+%• maintainability,
+%• configuration management,
+%• security,
+%• privacy,
+%• metrication, and
+%• verification and validation.
+%
+%The Supplier shall agree on the following principles and rules:
+%
+%• assignment of persons (on both sides) responsible for establishing the software requirements;
+%
+%• methods for agreeing on requirements and approving changes;
+%
+%• efforts to prevent misunderstandings such as definition of terms, explanations of background of requirements;
+%
+%• recording and reviewing discussion results on both sides.
 
-Besides functional requirements, the following classes of non-functional requirements shall be specified:
-• performance,
-• reliability,
-• robustness,
-• quality,
-• maintainability,
-• configuration management,
-• security,
-• privacy,
-• metrication, and
-• verification and validation.
+%\textbf{SPA-19} \it
+%
+%The software requirements shall be:
+%• correct;
+%• unambiguous;
+%• complete;
+%• consistent;
+%• verifiable;
+%• traceable.
+%For each requirement, the method for verification and validation shall be specified.
+%}
 
-The Supplier shall agree on the following principles and rules:
-
-• assignment of persons (on both sides) responsible for establishing the software requirements;
-
-• methods for agreeing on requirements and approving changes;
-
-• efforts to prevent misunderstandings such as definition of terms, explanations of background of requirements;
-
-• recording and reviewing discussion results on both sides.
-}
-
-The SRS gives the following classes of requirements:
+The SRS gives the following classes of requirements based on the Statement of Work [SoW], ROSE-L Mission Requirements Document [MRD], and Generic Software Requirements [GEN]:
 \begin{itemize}
     \item \textbf{\texttt{FUN}}: Functional requirements
     \item \textbf{\texttt{PER}}: Performance requirements
@@ -273,181 +276,116 @@ The SRS gives the following classes of requirements:
     \item \textbf{\texttt{SWD}}: Software development process requirements
 \end{itemize}
 
-Robustness requirements are included in \textbf{\texttt{RAM}}. Configuration management requirements (e.g. versioning) are included in \textbf{\texttt{RAM}}, \textbf{\texttt{DEL}}, \textbf{\texttt{SWD}}. Security requirements (e.g. vulnerability) are included in \textbf{\texttt{SWD}}. There are no privacy requirements. Metrication requirements are included in \textbf{\texttt{RAM}}.
+Robustness requirements are included in \textbf{\texttt{RAM}}. Configuration management requirements (e.g. versioning) are included in \textbf{\texttt{RAM}}, \textbf{\texttt{DEL}}, \textbf{\texttt{SWD}}. Security requirements (e.g. vulnerability) are included in \textbf{\texttt{SWD}}. There are no privacy requirements. Metrication requirements are included in \textbf{\texttt{RAM}}. The software requirements shall be correct, unambiguous, complete, consistent, verifiable, and traceable. A verification method is assigned for each requirement and reviewed until PDR.
 
-The establishment of software requirements is conducted by Christoph Schnupfhagn, Björn Tings and Dominik Günzel for the project team and Muriel Pinheiro and Antonio Valentino for ESA. TBDs/TBCs and their due dates (milestones) are tracked as Gitlab issues. The discussion and results should be written as comments to the issues. The issues should be set to "in review" after agreeing on a solution. The final approval of changes is conducted by ESA upon the next delivery of the SRS, followed by ESA closing the Gitlab issue. If necessary, comments are added to the requirements to avoid misunderstandings.
+The establishment of software requirements is conducted by Christoph Schnupfhagn, Björn Tings and Dominik Günzel for the project team and Muriel Pinheiro and Antonio Valentino for ESA. TBDs/TBCs and their due dates (milestones) are tracked as Gitlab issues. The discussion and results should be written as comments to the issues in order to record and review discussion results. The issues should be set to "in review" after agreeing on a solution. The final approval of changes is conducted by ESA upon the next delivery of the SRS, followed by ESA closing the Gitlab issue. If necessary, comments are added to the requirements to avoid misunderstandings.
 
 
 \subsubsection{Software architectural design and design of software elements}
+\label{subsec:software-architectural-design}
 
-{\color{green}
-\textbf{SPA-14} \it
+%{\color{green}
+%\textbf{SPA-14} \it
+%
+%It shall be ensured that:
+%
+%• mandatory and advisory design standards are defined and applied, adherence to design standards is verified;
+%
+%• specific rules on design and code are defined to ensure that the specified level of numerical accuracy is obtained;
+%
+%• means, criteria and tools to ensure that the complexity and modularity of the design meet the quality requirements are defined and applied;
+%
+%• the design documentation contains the appropriate level of information for maintenance activities.
+%}
 
-It shall be ensured that:
+%{\color{green}
+%\textbf{SPA-20} \it
+%
+%The software design shall:
+%
+%• meet the non-functional requirements;
+%
+%• engineered in a way to facilitate testing;
+%
+%• be subjected to no dependency on the operating system and the hardware, in order to aid portability
+%}
 
-• mandatory and advisory design standards are defined and applied, adherence to design standards is verified;
+\paragraph*{Design standards and verification}
 
-• specific rules on design and code are defined to ensure that the specified level of numerical accuracy is obtained;
+The SW is designed to follow the ECSS-E-ST-40C [ECSS-E] with tailoring for the Copernicus expansion missions and follows object oriented programming methodologies. Design standards are defined in the SDD Section~4.7 and SDP Section~5.3. The automated CI/CD pipeline checks the adherence to the PEP8 coding standard, static analysis, and static type hinting. 
 
-• means, criteria and tools to ensure that the complexity and modularity of the design meet the quality requirements are defined and applied;
+\paragraph*{Numerical accuracy}
 
-• the design documentation contains the appropriate level of information for maintenance activities.
-}
+The data type and precision of internal variables is defined in the \texttt{xarray.DataTree} (see SDD Section~5.5). Error handling (e.g. edge cases such as NaN data) described in the SDD Section~5.2. Regression testing is planned in the SIVVP, e.g. to verify that results remain numerically stable.
 
-{\color{green}
-\textbf{SPA-20} \it
+\paragraph*{Complexity, modularity and quality metrics}
 
-The software design shall:
+To ensure modularity of the processor software, the input/output handling, core processing algorithms and orchestration of the value-adding modules wind, waves and currents is separated from the processor software into separate repositories L2O-IO, L2O-COREALG and L2O-VAM. These repositories are used by L2O-GPP, L2O-IPF and L2O-QC as needed. An \texttt{xarray.DataTree} with fixed structure provides an internal product format and defines the internal interfaces. This contributes to the processor modularity, as algorithms can be changed easily, while the data structure remains. The core processing modules EOPF-CPM implement a design that is compatible with the orchestration at the processing facility. COEREALG does not contain complex data structures, and is reused in GPP/IPF and QC and wherever needed. Program flow is designed together with the project team. Furthermore, the production model (PRODMOD) defines the processor input/output and the program flow, which is represented in the software design.
 
-• meet the non-functional requirements;
+Code complexity is monitored as product metrics such as cyclomatic complexity and maintainability index. Furthermore, the test coverage is monitored by the CI/CD pipeline.
 
-• engineered in a way to facilitate testing;
+\paragraph*{Level of information of the design documentation}
 
-• be subjected to no dependency on the operating system and the hardware, in order to aid portability
-}
+The SDD and accompanying documents (e.g. ICD, IODD) detail the program flow as well as internal and external interfaces and dependencies. The structure and content follows the ECSS standard [ECSS-E].
 
-\textcolor{red}{To be extended, depends on SDD content}
+Furthermore, docstrings are used for automated generation of an API reference. Docstring coverage and the number of comment lines are monitored by the CI/CD pipeline.
 
-(Adapted from SPAMR V0.1)  \textcolor{red}{updates and/or plans?}
+\paragraph*{Software design process}
 
-The SW is designed to follow the ECSS-E-ST-40C [ECSS-E] with tailoring for the Copernicus expansion missions. Adherence to the standard is checked with the methods and tools mentioned in Section~\ref{subsec:methods-and-tools}. \textcolor{red}{how is it checked?}
-
-The core processing modules EOPF-CPM implement a design that is compatible with the orchestration at the processing facility. EOPF-CPM version 3 is currently used in the processor to ensure compatibility. However, the EOPF-CPM implementation is subject to change, which needs to be accounted for in the implementation of the prototype processor. Furthermore, the production model PRODMOD defines the processor input/output and the program flow, which is accounted for in the software design.
-
-\textcolor{red}{To be improved} The SW is designed exploiting object oriented programming methodologies. Further information can be found in the software design document (SDD) and software development plan (SDP).
-
-Software design standards and conventions are defined in the SDD Section 4.7. Furthermore, requirements on the software design and their verification methods are defined in the SRS. The adherence to coding standards \textcolor{red}{etc} is checked by the CI/CD pipelines.
-
-For numerical accuracy, the use of at least float32 and int32 is encouranged \textcolor{red}{??}
-
-COEREALG does not contain complex data structures, and is reused in GPP/IPF and QC and wherever needed. Program flow is designed together with the project team. Code complexity and modularity are quantified by the respective product metrics. \textcolor{red}{??}
-
-\textcolor{red}{How to check the appropriate level of informaiton?}
-
+A preliminary software design was discussed with ESA in the SRR. The software design was refined based on ESA's comments, the software requirements (including non-functional requirements), the production model and the needs for wind, wave and currents retrieval. The software design is engineered to facilitate testing using object oriented methodologies, the use of exchangeable core algorithms and the encouragement of the developers for test-driven development. Processor code is written in Python to ensure portability across operating systems and 64-bit hardware.
 
 \subsubsection{Coding}
+\label{subsec:coding}
 
-{\color{green}
-\textbf{SPA-15} \it
+%{\color{green}
+%\textbf{SPA-15} \it
+%
+%It shall be ensured that:
+%
+%• coding standards (including consistent naming
+%conventions and adequate commentary rules),
+%consistent with the product quality requirements, are
+%specified and observed;
+%
+%• the tools to be used in implementing and checking
+%conformance with coding standards are identified
+%before coding activities start;
+%
+%• the code evaluation against the coding standards and
+%applicable quality requirements is performed in
+%parallel with the coding process, in order to provide
+%feedback to the software programmers;
+%
+%• synthesis of the code analysis results and corrective
+%actions implemented are described in the software
+%product assurance reports;
+%
+%• the software code is put under configuration control
+%immediately after successful unit testing.
+%}
 
-It shall be ensured that:
+All Python code developed in the project follows the coding conventions defined by the PEP8 style guide. Adherence to these conventions is checked automatically on multiple levels of the development pipeline to catch deviations reliably and as early as possible.
 
-• coding standards (including consistent naming
-conventions and adequate commentary rules),
-consistent with the product quality requirements, are
-specified and observed;
+The first level is the local development environment of contributors. The code repository contains a set of recommended extensions and settings for the most widely used IDE VS Code, such as linter, code formatter and static type checker. The intent is to help developers with setting up a development environment that provides immediate feedback to ensure adherence to coding standards as early as possible in the development flow. This is facilitated further by providing a set of Git pre-commit hooks that can be installed by developers to apply code checks automatically before each commit. This works independently of the IDE being used. Thus, evaluation of the coding standards is performed and fed back to the developers in parallel with the coding process.
 
-• the tools to be used in implementing and checking
-conformance with coding standards are identified
-before coding activities start;
+The second level is the Gitlab platform. As the local development environment of contributors cannot be enforced, all committed code changes are checked by a suite of tools integrated in automated CI/CD pipelines on Gitlab. In combination with the branching strategy outlined in section \ref{subsec:methods-and-tools}, this ensures that only verified code enters the main branch. The code is put under configuration control only if the CI/CD pipeline finished without errors, including unit tests. A synthesis of the code analysis results (passed or failed) and corrective actions shall be reported in the SPAMR.
 
-• the code evaluation against the coding standards and
-applicable quality requirements is performed in
-parallel with the coding process, in order to provide
-feedback to the software programmers;
-
-• synthesis of the code analysis results and corrective
-actions implemented are described in the software
-product assurance reports;
-
-• the software code is put under configuration control
-immediately after successful unit testing.
-}
-
-(From SPAMR V0.1) \textcolor{red}{updates and/or plans?}
-
-Adherence to coding standards is checked automatically by a suite of tools integrated in the CI/CD pipeline on Gitlab. This in combination with the outlined branching strategy ensures that only checked code enters the main branch. The automated code checks have already been implemented before the coding activities started, although the used software changed (e.g. flake8 was replaced by ruff). The following automated code checks are implemented:
+The automated code checks have already been implemented before the coding activities started, although some of the software used may have changed (e.g., flake8 was replaced by ruff). The following tools are implemented in Gitlab CI/CD, including some that are not related to Python code but check other file types:
 
 \begin{itemize}
-    \item Python code linter (ruff)
-    \item Python code formatter (ruff)
-    \item Python imports formatter (isort)
-    \item Python static type checker (mypy)
-\end{itemize}
-
-Besides the code checks in CI/CD pipelines, the code repository contains a set of recommended extensions for the VS Code IDE, such as linter, code formatter and static type checker. The intent is to help developers with setting up a local development environment that provides immediate feedback to ensure adherence to coding standards as early as possible in the development flow. This is facilitated further by providing a set of Git pre-commit hooks that can be installed by developers to apply code checks automatically before each commit and works independently of the IDE being used.
-
-A synthesis of the code analysis results (passed or failed) and corrective actions shall be reported in the SPAMR.
-
-
-\subsubsection{Testing and validation (including regression testing)}
-
-{\color{green}
-\textbf{SPA-16} \it
-
-It shall be ensured that:
-
-• the test procedures and data are adequate, feasible and traceable and that they satisfy the requirements;
-
-• test readiness reviews shall be held before the commencement of test activities;
-
-• software problem detected during testing are properly documented and reported to those concerned;
-
-• the completion of actions related to software problem reports generated during testing and validation is verified and recorded;
-
-• provisions are made to allow witnessing of tests by the customers;
-
-• tests are conducted in accordance with approved test procedures and data;
-
-• the configuration under test is correct;
-
-• the tests are properly documented;
-
-• the test reports are up to date and valid;
-
-• that tests are repeatable, by verifying the storage and recording of tested software, support software, test environment, supporting documents and problems found;
-
-• areas affected by any modification are identified and re-tested (regression testing);
-
-• test documentation is up to date and organized to facilitate its reuse for maintenance;
-
-• before offering the product for delivery and customer acceptance, the software is validated as a complete product, under conditions similar to the application environment as specified in the software requirements.
-}
-
-The software developers are encouraged to follow test-driven development. The unit test coverage is monitored by CI/CD pipelines. The software validation is conducted with the L2O-QC library.
-
-\textcolor{red}{To be extended with information from SIVVP. I think we can provide further information at CDR}
-
-
-\subsubsection{Verification}
-
-{\color{green}
-\textbf{SPA-11} \it
-The software assurance personnel shall ensure that:
-
-• activities for the verification of the quality requirements are specified;
-
-• verification activities are performed according to the plan;
-
-• verification is carried out by suitably independent personnel;
-
-• the outputs of each development activity are verified for conformance against pre-defined criteria, and only outputs which have been subjected to planned verifications are used as inputs for subsequent activities;
-
-• the completion of actions related to software problem reports generated during verification is verified and recorded;
-
-• traceability matrices are verified at each milestone.
-}
-
-(From SPAMR V0.1, \textcolor{red}{needs update})
-
-\paragraph{Verification of quality requirements:} A CI/CD pipeline has been set up on Gitlab to automatically perform certain actions to ensure code quality, scan for vulnerabilities, build the Python package and Docker image, etc. The following list includes the names of the tools currently used and their respective purpose:
-\begin{itemize}
-    \item Code checks
+    \item Code checks, tests, and security
     \begin{itemize}
-        \item hadolint: Dockerfile linter
-        \item flake8: Python code linter
-        \item black: Python code formatter
-        \item isort: Python imports formatter
+        \item ruff: Python code linter \& formatter
         \item mypy: Python static type checker
-    \end{itemize}
-    \item pytest: Python unit and integration tests
-    \item Security checks
-    \begin{itemize}
+        \item radon-ci: Python code complexity analysis
+        \item docstr-coverage: Python docstring coverage monitor
         \item bandit: Python code security scanner
-        \item trivy: Vulnerability scanner for package dependencies
+        \item pip-audit: Python package dependency vulnerability checker
+        \item pytest: Python unit and integration tests
+        \item rstcheck: ReST file linter
+        \item hadolint: Dockerfile linter
+        \item trivy: Container image vulnerability scanner
     \end{itemize}
-    \item docstr-coverage: Python docstring coverage monitor
-    \item xenon: Python code complexity monitor
     \item Build and deliver
     \begin{itemize}
         \item build: Python packaging frontend
@@ -462,52 +400,119 @@ The software assurance personnel shall ensure that:
     \end{itemize}
 \end{itemize}
 
-\paragraph{Verification activities:} In general, for each of the software requirements, a verification method (design, inspection, test) is specified. The verification methods are reviewed until PDR. The SIVVP (first delivered at PDR) includes planning for the verification activities. For the verification methods "design" and "inspection", verification should be reviewed by an independent person, while unit tests are developed by the person implementing the software function.
+A tool for the measurement of "number duplicated lines of code" has not been implemented yet.
 
 
+\subsubsection{Testing and validation}
+\label{subsec:testing-validation}
 
-\textcolor{red}{to be extended}
+%{\color{green}
+%\textbf{SPA-16} \it
+%
+%It shall be ensured that:
+%
+%• the test procedures and data are adequate, feasible and traceable and that they satisfy the requirements;
+%
+%• test readiness reviews shall be held before the commencement of test activities;
+%
+%• software problem detected during testing are properly documented and reported to those concerned;
+%
+%• the completion of actions related to software problem reports generated during testing and validation is verified and recorded;
+%
+%• provisions are made to allow witnessing of tests by the customers;
+%
+%• tests are conducted in accordance with approved test procedures and data;
+%
+%• the configuration under test is correct;
+%
+%• the tests are properly documented;
+%
+%• the test reports are up to date and valid;
+%
+%• that tests are repeatable, by verifying the storage and recording of tested software, support software, test environment, supporting documents and problems found;
+%
+%• areas affected by any modification are identified and re-tested (regression testing);
+%
+%• test documentation is up to date and organized to facilitate its reuse for maintenance;
+%
+%• before offering the product for delivery and customer acceptance, the software is validated as a complete product, under conditions similar to the application environment as specified in the software requirements.
+%}
 
+The software developers are encouraged to follow test-driven development. The unit test coverage is monitored by CI/CD pipelines. The software integration, verification and validation is conducted with the L2O-QC library. In that regard, functional, performance, robustness, contingency and data tests are set. Further information can be provided at CDR following the SIVVP to comply with SPA-16.
+
+Then, the test documentation shall be checked (to comply with SPA-21) to:
+
+\begin{itemize}
+    \item cover the test environment, tools and test software
+    \item specify the criteria for completion of each test and any contingency steps
+    \item specify test procedures, data and expected results
+    \item identify hardware and software configuration for testing
+\end{itemize}
+
+
+\subsubsection{Verification}
+\label{subsec:verification}
+
+%{\color{green}
+%\textbf{SPA-11} \it
+%The software assurance personnel shall ensure that:
+%
+%• activities for the verification of the quality requirements are specified;
+%
+%• verification activities are performed according to the plan;
+%
+%• verification is carried out by suitably independent personnel;
+%
+%• the outputs of each development activity are verified for conformance against pre-defined criteria, and only outputs which have been subjected to planned verifications are used as inputs for subsequent activities;
+%
+%• the completion of actions related to software problem reports generated during verification is verified and recorded;
+%
+%• traceability matrices are verified at each milestone.
+%}
+
+\paragraph*{Verification of quality requirements:} Section~\ref{subsec:quality-models} introduced a quality model, and Section~\ref{subsec:product-metrics} defines quantitative product metrics and targets to measure the adherence to quality requirements. Target values were pre-defined in the SoW and included into the SRS document. The product metrics are automatically evaluated by the CI/CD pipeline and the merge request is only accepted if the pipeline is passed. The temporal evolution of the product metrics and the completion of actions related to software problem reports is reported in the SPAMR.
+
+\paragraph*{Verification activities:} In general, for each of the software requirements, a verification method (design, inspection, test) is specified. The verification methods are reviewed until PDR. The SIVVP (first delivered at PDR) includes planning for the verification activities. For the verification methods "design" and "inspection", verification should be reviewed by an independent person, while unit tests are developed by the person implementing the software function. Traceability matrices (linking software requirements with tests) shall be verified at each milestone.
 
 \subsubsection{Software delivery and acceptance}
 \label{subsub:software-delivery-and-acceptance}
 
-{\color{green}
-\textbf{SPA-17} \it
-
-The roles, responsibilities and obligations of the supplier and customer during installation shall be established.
-The Supplier shall ensure that:
-
-• the delivered software complies with the contractual requirements (including any specified content of the software acceptance data package);
-
-• the source and object code supplied correspond to
-each other;
-
-• all agreed changes are implemented;
-
-• all software problems are either resolved or declared.
-
-The customer shall:
-
-• establish an acceptance test plan, specifying the
-intended acceptance tests;
-
-• ensure that the acceptance tests are performed in
-accordance with the approved acceptance test plan;
-
-• verify that the executable code was regenerated from
-configuration managed source code components and
-installed in accordance with predefined procedures
-on the target environment;
-
-• ensure that any discovered problems are
-documented;
-
-• certify conformance to the procedures and state the
-conclusion concerning the acceptance result for the
-software product under test (accepted, conditionally
-accepted, rejected).
-}
+%{\color{green}
+%\textbf{SPA-17} \it
+%
+%The roles, responsibilities and obligations of the supplier and customer during installation shall be established.
+%The Supplier shall ensure that:
+%
+%• the delivered software complies with the contractual requirements (including any specified content of the software acceptance data package);
+%
+%• the source and object code supplied correspond to
+%each other;
+%
+%• all agreed changes are implemented;
+%
+%• all software problems are either resolved or declared.
+%
+%The customer shall:
+%
+%• establish an acceptance test plan, specifying the
+%intended acceptance tests;
+%
+%• ensure that the acceptance tests are performed in
+%accordance with the approved acceptance test plan;
+%
+%• verify that the executable code was regenerated from
+%configuration managed source code components and
+%installed in accordance with predefined procedures
+%on the target environment;
+%
+%• ensure that any discovered problems are
+%documented;
+%
+%• certify conformance to the procedures and state the
+%conclusion concerning the acceptance result for the
+%software product under test (accepted, conditionally
+%accepted, rejected).
+%}
 
 Milestones for software delivery and acceptance are provided in the [SoW]. Each software delivery is comprised of a development kit, runtime kit, and verification kit. The content of the software delivery kits is detailed in the SRS. Here is a checklist:
 
@@ -515,13 +520,15 @@ Milestones for software delivery and acceptance are provided in the [SoW]. Each 
     \item Software development kit
         \begin{itemize}
             \item source code (tarball)
-            \item configuration files for processor, development tools, software checking tools (from CI/CD pipeline)
+            \item nominal processor configuration files
+            \item configuration files for development tools, software checking tools (pre-commit hooks, CI/CD pipeline, etc.)
             \item license file (\texttt{LICENSE})
-            \item copyright attribution at the end of \texttt{README.md}, and in source files if source code cannot be associated to a single copyright owner
-            \item and credits in the \texttt{README.md} for reused software
+            \item copyright attribution at the end of \texttt{README.rst}, and in source files if source code cannot be associated to a single copyright owner
+            \item credits in the \texttt{CREDITS} file for reused software
             \item API documentation (searchable HTML)
             \item software build instructions (as part of the software user manual)
             \item software reuse file (as part of the software user manual)
+            \item Package dependencies for offline installation
         \end{itemize}
 
     \item Software runtime kit
@@ -529,6 +536,7 @@ Milestones for software delivery and acceptance are provided in the [SoW]. Each 
              \item binary conda package (wheel format is acceptable for PDR as agreed with ESA)
              \item support and configuration files to run the software
              \item for each included software package: license file, including also the license of embedded SW, copyright attributions and credits as requested by the licenses of the re-used SW 
+             \item Package dependencies for offline installation
          \end{itemize}
 
     \item Software verification kit
@@ -544,18 +552,25 @@ Milestones for software delivery and acceptance are provided in the [SoW]. Each 
             \item ensure that all agreed changes are implemented
             \item ensure that all software problems are either resolved or declared
             \item adhere to the semantic versioning scheme
-            \item MD5 integrity checksum, as available on the Gitlab release pages and Pypi
+            \item SHA-256 integrity checksum, as available on the Gitlab release pages and Pypi
             \item it shall be possible to install, build and execute the SW and its environment offline
             \item version-pinned dependencies (e.g. requirements.txt)
             \item if dependencies from non-standard (i.e., other than PyPI, conda) repositories are used, these shall be provided both as source archives and also as binary packages in the selected packaging format (wheel or conda). 
         \end{itemize}
 \end{itemize}
 
-\textcolor{red}{Check and update. Acceptance will be provided in the SIVVP, maybe later (CDR)?}
+Planning and assurance of the software acceptance will be added to the SIVVP and SPAP at CDR, covering the following:
+\begin{itemize}
+    \item establish an acceptance test plan, specifying the intended acceptance tests;
+    \item ensure that the acceptance tests are performed in accordance with the approved acceptance test plan;
+    \item verify that the executable code was regenerated from configuration managed source code components and installed in accordance with predefined procedures on the target environment;
+    \item ensure that any discovered problems are documented;
+    \item certify conformance to the procedures and state the conclusion concerning the acceptance result for the software product under test (accepted, conditionally accepted, rejected).
+\end{itemize}
 
 \subsubsection{Operations and maintenance}
 
-The L2O-IPF processor is intended for use at the Copernicus Ground Segment (CGS). \textcolor{red}{maintenance?}
+The L2O-IPF processor is intended for use at the Copernicus Ground Segment (CGS). To facilitate the maintenance of the software during the project and afterwards, the software is documented according to open source best practices (e.g. software user manual, API references via docstrings). Furthermore, product metrics such as the code complexity and maintainability index are automatically evaluated.
 
 
 
@@ -578,94 +593,100 @@ The L2O-IPF processor is intended for use at the Copernicus Ground Segment (CGS)
 
 
 \subsection{Procedures and standards}
-{\color{pink} \it
-a. The SPAP shall describe or list by reference all procedures and standards
-applicable to the development of the software in the project.
 
-b. The software product assurance measures to ensure adherence to the
-project procedures and standards shall be described.
+%{\color{pink} \it
+%a. The SPAP shall describe or list by reference all procedures and standards
+%applicable to the development of the software in the project.
+%
+%b. The software product assurance measures to ensure adherence to the
+%project procedures and standards shall be described.
+%
+%c. The standards and procedures to be described or listed in accordance
+%with B.2.1<6.8>a shall be as a minimum those covering the following
+%aspects:
+%
+%1. project management;
+%
+%2. risk management;
+%
+%3. configuration and documentation management;
+%
+%4. verification and validation;
+%
+%5. requirements engineering;
+%
+%6. design;
+%
+%7. coding;
+%
+%8. metrication;
+%
+%9. nonconformance control;
+%
+%10. audits;
+%
+%11. alerts;
+%
+%12. procurement;
+%
+%13. reuse of existing software;
+%
+%14. use of methods and tools;
+%
+%15. numerical accuracy;
+%
+%16. delivery, installation and acceptance;
+%
+%17. operations;
+%
+%18. maintenance;
+%
+%19. device programming and marking.
+%}
 
-c. The standards and procedures to be described or listed in accordance
-with B.2.1<6.8>a shall be as a minimum those covering the following
-aspects:
-
-1. project management;
-
-2. risk management;
-
-3. configuration and documentation management;
-
-4. verification and validation;
-
-5. requirements engineering;
-
-6. design;
-
-7. coding;
-
-8. metrication;
-
-9. nonconformance control;
-
-10. audits;
-
-11. alerts;
-
-12. procurement;
-
-13. reuse of existing software;
-
-14. use of methods and tools;
-
-15. numerical accuracy;
-
-16. delivery, installation and acceptance;
-
-17. operations;
-
-18. maintenance;
-
-19. device programming and marking.
-}
-
-{\color{green}
-
-
-}
-
+The software is being developed according to the ECSS-E-ST-40C standard [ECSS-E] with tailoring [ECSS-T]. The software quality is evaluated according to the ECS-Q-ST-80C standard [ECSS-Q]. Further procedures and standards are defined in the respective documents.
 
 \subsubsection{Audits}
+\label{subsec:audits}
 
-{\color{green}
-\textbf{SPA-04 Audits} \it
-
-The Supplier shall perform audits on lower-level suppliers when necessary to overcome failure, consistent poor quality, or other problems. Audits shall be planned for and performed using established and maintained procedures (see ECSS-Q-ST-10, clause 5.2.3).
-}
+%{\color{green}
+%\textbf{SPA-04 Audits} \it
+%
+%The Supplier shall perform audits on lower-level suppliers when necessary to overcome failure, consistent poor quality, or other problems. Audits shall be planned for and performed using established and maintained procedures (see ECSS-Q-ST-10, clause 5.2.3).
+%}
 
 If problems can not be solved via the usual communication channels, audits are performed on demand using established and maintained procedures (see ECSS-Q-ST-10, clause 5.2.3).
 
 \subsubsection{Software problems}
+\label{subsec:software-problems}
 
-{\color{green}
-\textbf{SPA-05 Software problems} \it
+%{\color{green}
+%\textbf{SPA-05 Software problems} \it
+%
+%Procedures for the logging, analysis and correction of all software problems encountered during software verification and validation shall be defined and implemented.
+%Software problem reports during verification and validation shall contain the following information:
+%• identification of the software item;
+%• description of the problem;
+%• recommended solution;
+%• final disposition;
+%• modifications implemented (e.g. documents, code, and tools);
+%• tests re-executed.
+%}
 
-Procedures for the logging, analysis and correction of all software problems encountered during software verification and validation shall be defined and
-implemented.
-Software problem reports during verification and validation shall contain the following information:
-• identification of the software item;
-• description of the problem;
-• recommended solution;
-• final disposition;
-• modifications implemented (e.g. documents, code, and tools);
-• tests re-executed.
-}
+Software problem reports shall contain the following information:
+\begin{itemize}
+    \item identification of the software item;
+    \item description of the problem;
+    \item recommended solution;
+    \item final disposition;
+    \item modifications implemented (e.g. documents, code, and tools);
+    \item tests re-executed.
+\end{itemize}
 
-\textcolor{red}{check based on SIVVP. Here is a suggestion:}
+In this project, software problems encountered during software verification and validation shall be reported as "Issues" in the Gitlab repository of the respective SW item, including a detailed description of the problem and, if possible, a recommended solution. The issue should be assigned to a responsible person. The assignee shall describe the problem resolution and report implemented modifications (documents, code, tools) in commit messages and link the merge request to the issue. As configured for the Gitlab repositories, the merge requests automatically trigger the execution of the CI/CD pipeline.
 
-Software problems encountered during software verification and validation shall be reported as "Issues" in the Gitlab repository of the respective SW item, including a detailed description of the problem and, if possible, a recommended solution. The issue should be assigned to a responsible person. The assignee shall describe the problem resolution and report implemented modifications (documents, code, tools) in commit messages and link the merge request to the issue. As configured for the Gitlab repositories, the merge requests automatically trigger the execution of the CI/CD pipeline.
+
 
 \subsubsection{Export control}
 
-{\color{red} Let Morten review; should cover L2O-SWD-2750, 2760, 2770, 2780}
-
-Procedures for handling export controlled documents and software received from ESA will be established on demand (see L2O-SWD-2750, L2O-SWD-2760, L2O-SWD-2770, L2O-SWD-2780). 
+Documents and software under export control should be handled according to the requirements L2O-SWD-2750, L2O-SWD-2760, L2O-SWD-2770, L2O-SWD-2780 in the SRS.

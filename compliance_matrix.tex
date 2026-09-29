@@ -1,23 +1,24 @@
 \section{Compliance matrix to software product assurance requirements}
-{\color{pink} \it
-a. The SPAP shall include the compliance matrix to the applicable software
-product assurance requirements (e.g. ECSS-Q-ST-80 clauses, as tailored
-by a product assurance requirements document), or provide a reference
-to it.
 
-b. For each software product assurance requirement, the following
-information shall be provided:
-1. requirement identifier;
-2. compliance
-(C = compliant, NC = non–compliant, NA = not applicable);
-3. reference to the project documentation covering the requirement
-(e.g. section of the software product assurance plan);
-4. remarks.
-}
+%{\color{pink} \it
+%a. The SPAP shall include the compliance matrix to the applicable software
+%product assurance requirements (e.g. ECSS-Q-ST-80 clauses, as tailored
+%by a product assurance requirements document), or provide a reference
+%to it.
+%
+%b. For each software product assurance requirement, the following
+%information shall be provided:
+%1. requirement identifier;
+%2. compliance
+%(C = compliant, NC = non–compliant, NA = not applicable);
+%3. reference to the project documentation covering the requirement
+%(e.g. section of the software product assurance plan);
+%4. remarks.
+%}
 
-The following table shows the compliance matrix to the software product assurance requirements from ECSS tailoring [ECSS-T]. Compliance can be C (compliant), NC (non–compliant), NA (not applicable).
+The following table shows the compliance matrix to the software product assurance requirements from ECSS tailoring [ECSS-T]. Compliance is set to one of the following: C (compliant), NC (non–compliant) or NA (not applicable).
 
-\newcolumntype{L}{>{\hsize=0.4\hsize\raggedright\arraybackslash}X}
+\newcolumntype{L}{>{\hsize=0.5\hsize\raggedright\arraybackslash}X}
 \newcolumntype{S}{>{\hsize=0.15\hsize\raggedright\arraybackslash}X}
 \newcolumntype{N}{>{\raggedright\arraybackslash}X}
 
@@ -40,8 +41,8 @@ The following table shows the compliance matrix to the software product assuranc
         • provide resources to perform software product assurance tasks; \newline
         • identify the personnel responsible for software product assurance; \newline
         • grant the software product assurance personnel organisational authority and independence, as well as unimpeded access to higher management as necessary to fulfil their duties.} &
-        &
-        {PMP, \newline SDP 4.7, \newline SPAP 5.1, 5.2, 5.3} & 
+        C &
+        {PMP, \newline SDP 4.7, \newline SPAP~\ref{subsec:product-assurance-organization}, \ref{subsec:responsibilities}, \ref{subsec:resources}} & 
         \\ \hline
 
         SPA-02 &
@@ -60,14 +61,14 @@ The following table shows the compliance matrix to the software product assuranc
         • problems detected; \newline
         • problems resolved.} &
         C &
-        {SPAP 5.4, \newline SPAMR} &
+        {SPAP~\ref{subsec:reporting}, \newline SPAMR} &
         \\ \hline
 
         SPA-04 &
         {\textbf{Audits} \newline
         The Supplier shall perform audits on lower-level suppliers when necessary to overcome failure, consistent poor quality, or other problems. Audits shall be planned for and performed using established and maintained procedures (see ECSS-Q-ST-10, clause 5.2.3).} &
-        &
-        {SPAP 6.8} &
+        C &
+        {SPAP~\ref{subsec:audits}} &
         \\ \hline
 
         SPA-05 &
@@ -80,16 +81,16 @@ The following table shows the compliance matrix to the software product assuranc
         • final disposition;  \newline
         • modifications implemented (e.g. documents, code, and tools);  \newline
         • tests re-executed.} &
-        &
-        {SPAP 6.8, \newline SPAMR 9} &
+        C &
+        {SPAP~\ref{subsec:software-problems}, \newline SPAMR 9} &
         \\ \hline
 
         SPA-06 &
         {\textbf{Methods and tools} \newline
         Methods and tools to be used for all the activities of the software development cycle (including requirements analysis, software specification, modelling, design, coding, validation, testing, configuration management, verification and product assurance) shall be identified by the supplier and agreed by the customer. \newline
         The correct use of methods and tools shall be verified and reported.} &
-        &
-        {SPAP 5.8, \newline SPAMR 5} &
+        C &
+        {SPAP~\ref{subsec:methods-and-tools}, \newline SPAMR 5} &
         \\ \hline
 
         SPA-07 &
@@ -101,16 +102,16 @@ The following table shows the compliance matrix to the software product assuranc
         • verification, testing and validation activities; \newline
         • maintenance. \newline
         Project plans, procedures and standards shall be finalized before the start of the related activities.} &
-        &
-        {SPAP 6.2} &
+        C &
+        {SPAP~\ref{subsec:project-plans}} &
         \\ \hline
 
         SPA-08 &
         {\textbf{Software dependability} \newline
         The software shall be specified and designed to prevent failure propagation. \newline
         Error handling shall be implemented to ensure that, in case of fault, the software shall support graceful degradation.} &
-        &
-        {SPAP 6.3} &
+        C &
+        {SPAP~\ref{subsec:software-dependability-safety}} &
         \\ \hline
 
         SPA-09 &
@@ -119,8 +120,8 @@ The following table shows the compliance matrix to the software product assuranc
         • the software configuration management system shall allow any reference version to be re-generated from backups; \newline
         • the supplier shall ensure that all authorized changes are implemented in accordance with the software configuration management planning and procedures; \newline
         • software configuration management planning and procedures shall address software branching and merging.} &
-        &
-        {SPAP 6.4} &
+        C &
+        {SPAP~\ref{subsec:configuration-management}} &
         \\ \hline
 
         SPA-10 &
@@ -130,8 +131,8 @@ The following table shows the compliance matrix to the software product assuranc
         • effort: how much effort is consumed by the various phases and tasks compared to the plan. \newline
         The following basic process metric shall be used and reported to the customer: \newline
         • Number of problems detected during validation testing} &
-        &
-        {SPAP 6.5, \newline SPAMR 7.2} &
+        C &
+        {SPAP~\ref{subsec:process-metrics}, \newline SPAMR 7.2} &
         \\ \hline
 
         SPA-11 &
@@ -143,15 +144,15 @@ The following table shows the compliance matrix to the software product assuranc
         • the outputs of each development activity are verified for conformance against pre-defined criteria, and only outputs which have been subjected to planned verifications are used as inputs for subsequent activities; \newline
         • the completion of actions related to software problem reports generated during verification is verified and recorded; \newline
         • traceability matrices are verified at each milestone.} &
-        &
-        {SPAP 6.7.5, \newline SPAMR 4} &
+        C &
+        {SPAP~\ref{subsec:verification}, \newline SPAMR 4} &
         \\ \hline
 
         SPA-12 &
         {\textbf{Reuse of existing software} \newline
         The existing software re-used within the project shall be identified and agreed with ESA.} &
         C &
-        {SPAP 6.6} &
+        {SPAP~\ref{subsec:reused-software}} &
         \\ \hline
 
         SPA-13 &
@@ -174,7 +175,7 @@ The following table shows the compliance matrix to the software product assuranc
         • efforts to prevent misunderstandings such as definition of terms, explanations of background of requirements; \newline
         • recording and reviewing discussion results on both sides.} &
         C &
-        {SRS, \newline SPAP 6.7} &
+        {SRS, \newline SPAP~\ref{subsec:software-requirements-analysis}} &
         \\ \hline
 
         SPA-14 &
@@ -184,8 +185,8 @@ The following table shows the compliance matrix to the software product assuranc
         • specific rules on design and code are defined to ensure that the specified level of numerical accuracy is obtained; \newline
         • means, criteria and tools to ensure that the complexity and modularity of the design meet the quality requirements are defined and applied; \newline
         • the design documentation contains the appropriate level of information for maintenance activities.} &
-        &
-        {SPAP 6.7, \newline SPAMR 6.1} &
+        C &
+        {SPAP~\ref{subsec:software-architectural-design}, \newline SPAMR 6.1} &
         \\ \hline
 
         SPA-15 &
@@ -196,8 +197,8 @@ The following table shows the compliance matrix to the software product assuranc
         • the code evaluation against the coding standards and applicable quality requirements is performed in parallel with the coding process, in order to provide feedback to the software programmers; \newline
         • synthesis of the code analysis results and corrective actions implemented are described in the software product assurance reports; \newline
         • the software code is put under configuration control immediately after successful unit testing.} &
-        &
-        {SPAP 6.7, \newline SPAMR 6.2} &
+        C &
+        {SPAP~\ref{subsec:coding}, \newline SPAMR 6.2} &
         \\ \hline
 
         SPA-16 &
@@ -217,7 +218,8 @@ The following table shows the compliance matrix to the software product assuranc
         • test documentation is up to date and organized to facilitate its reuse for maintenance; \newline
         • before offering the product for delivery and customer acceptance, the software is validated as a complete product, under conditions similar to the application environment as specified in the software requirements.} &
         &
-        {SPAP 6.7} &
+        {SPAP~\ref{subsec:testing-validation}} &
+        Further information to be provided at CDR following SIVVP.
         \\ \hline
 
         SPA-17 &
@@ -236,7 +238,8 @@ The following table shows the compliance matrix to the software product assuranc
         • ensure that any discovered problems are documented; \newline
         • certify conformance to the procedures and state the conclusion concerning the acceptance result for the software product under test (accepted, conditionally accepted, rejected).} &
         &
-        {SDP, \newline SPAP 6.7} &
+        {SDP, \newline SPAP~\ref{subsub:software-delivery-and-acceptance}} &
+        Planning and assurance of the software acceptance to be added to the SIVVP and SPAP at CDR.
         \\ \hline
 
         SPA-18 &
@@ -256,8 +259,8 @@ The following table shows the compliance matrix to the software product assuranc
          \newline
         Numerical accuracy shall be estimated and verified. \newline
         The results of metrics collection and analysis shall be included in the software product assurance reports.} &
-        &
-        {SPAP 5.5, 7, \newline SPAMR 7.1} &
+        C &
+        {SPAP~\ref{subsec:quality-models}, \ref{sec:product-quality}, \newline SPAMR 7.1} &
         \\ \hline
 
         SPA-19 &
@@ -270,8 +273,8 @@ The following table shows the compliance matrix to the software product assuranc
         • verifiable; \newline
         • traceable. \newline
         For each requirement, the method for verification and validation shall be specified.} &
-        &
-        {SRS, ?} &
+        C &
+        {SRS, \newline SPAP~\ref{subsec:software-requirements-analysis}} &
         \\ \hline
 
         SPA-20 &
@@ -280,8 +283,8 @@ The following table shows the compliance matrix to the software product assuranc
         • meet the non-functional requirements; \newline
         • engineered in a way to facilitate testing; \newline
         • be subjected to no dependency on the operating system and the hardware, in order to aid portability} &
-        &
-        {SDD, \newline SPAP 6.7.2} &
+        C &
+        {SDD, \newline SPAP~\ref{subsec:software-architectural-design}} &
         \\ \hline
 
         SPA-21 &
@@ -292,7 +295,8 @@ The following table shows the compliance matrix to the software product assuranc
         • specify test procedures, data and expected results; \newline
         • identify hardware and software configuration for testing.} &
         &
-        {SIVVP ?} &
+        {SIVVP, SPAP~\ref{subsec:testing-validation}} &
+        TBD following SIVVP
         \\ \hline
         
     \end{xltabular}
